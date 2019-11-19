@@ -51,6 +51,10 @@ class Firebase {
   // *** Book API ***
   book = bid => this.db.ref(`books/${bid}`);
   books = () => this.db.ref(`books`);
+
+  // *** Cart API ***
+  cartitem = cid => this.db.ref(`cart/${cid}`);
+  cart = () => this.db.ref(`cart`);
 }
 
 export default Firebase;
