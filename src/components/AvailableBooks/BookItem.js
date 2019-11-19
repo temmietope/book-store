@@ -25,7 +25,6 @@ const BookItem = ({ book, imageUrl, id, history, addToCart }) => {
             // addToCart(book.title, id, book.author);
             addBook(book.title, id, book.author);
             console.log(cartBooks);
-
           }}
         >
           <button>Add To Cart</button>

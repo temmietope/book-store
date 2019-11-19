@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useBooksContext } from "../BookContext";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { cartBooks } = useBooksContext();
@@ -27,11 +28,19 @@ const Cart = () => {
       </>
     );
   };
+  const renderRedirectToHome = () => {
+    return (
+      <div>
+        <p>Cart is empty, start shopping now!</p>
+        <Link to="/">Click here.</Link>
+      </div>
+    );
+  };
   return (
     <>
       {cartList && cartList.length > 0
         ? renderCartList()
-        : "Cart is empty, start shopping now!"}
+        : renderRedirectToHome()}
     </>
   );
 };
