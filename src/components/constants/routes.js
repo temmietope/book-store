@@ -1,0 +1,9 @@
+export const HOME = '/';
+export const SIGN_UP = '/signup';
+export const LOG_IN = '/login';
+export const UPLOAD = '/upload';
+export const ACCOUNT = '/account';
+export const ADMIN = '/admin';
+export const CART = '/cart';
+export const PASSWORD_FORGET = '/pw-forget';
+export const BOOK = '/books/:id'

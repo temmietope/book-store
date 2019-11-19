@@ -1,0 +1,37 @@
+header {
+    background-image: url('../../assets/images/pages-of-books.jpg');
+    height: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.overlay {
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(244, 244, 244, 0.452);
+}
+header .search {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    position: absolute;
+    width: 600px;
+}
+header .search input {
+    padding: 15px;
+    font-size: 15px;
+    border: none;
+    font-family: "Artifika"
+}
+header .search span {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(127, 255, 212, 0.459);
+    border: 2px solid rgb(54, 114, 94)
+}
