@@ -17,7 +17,7 @@ const NavigationAuth = () => {
     <div className="navigation">
       <nav>
         <section className="brand-name">
-          <span>BOOKGARDEN</span>
+          <Link to={ROUTES.HOME}><span>BOOKGARDEN</span></Link>
         </section>
         <section className="auth-actions">
           <button className="log-in">

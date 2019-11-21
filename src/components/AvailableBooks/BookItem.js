@@ -39,7 +39,7 @@ const BookItem = ({ book, imageUrl, id, history, authUser }) => {
           className="btn"
           onClick={() => {
             history.push({
-              pathname: `/books/${id}`,
+              pathname: `/books/${book.title, id}`,
               state: {
                 book
               }
