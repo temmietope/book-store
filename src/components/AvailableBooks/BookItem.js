@@ -1,9 +1,18 @@
 import React from "react";
 import { withRouter } from "react-router";
 import { useBooksContext } from "../BookContext";
+import * as ROUTES from "../constants/routes";
 
-const BookItem = ({ book, imageUrl, id, history, addToCart }) => {
+const BookItem = ({ book, imageUrl, id, history, authUser }) => {
   const { addBook, cartBooks } = useBooksContext();
+  const addToCart = () => {
+    if (!authUser) {
+      alert("Please log in or signup before shopping");
+      return history.push(ROUTES.LOG_IN);
+    }
+    addBook(book.title, id, book.author);
+    console.log(cartBooks);
+  };
 
   return (
     <span className="book">
@@ -21,10 +30,7 @@ const BookItem = ({ book, imageUrl, id, history, addToCart }) => {
         <div
           className="btn"
           onClick={() => {
-            // alert("bookadded");
-            // addToCart(book.title, id, book.author);
-            addBook(book.title, id, book.author);
-            console.log(cartBooks);
+            addToCart();
           }}
         >
           <button>Add To Cart</button>

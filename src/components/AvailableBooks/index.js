@@ -30,15 +30,12 @@ const AvailableBooksBase = props => {
     return () => props.firebase.books().off();
   }, [props.firebase]);
 
-  const addToCart = (book, id, author) => {
-    // addBook(book, id, author);
-  };
   return (
     <div className="available-books">
       {loading ? (
         <div>Loading</div>
       ) : books ? (
-        <BookList books={books} addToCart={addToCart} />
+        <BookList books={books} />
       ) : (
         <div>There are no books ...</div>
       )}
