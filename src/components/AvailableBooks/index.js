@@ -17,8 +17,7 @@ const AvailableBooksBase = props => {
       console.log(bookObject);
       if (bookObject) {
         const bookList = Object.keys(bookObject).map(key => ({
-          ...bookObject[key],
-          bid: key
+          ...bookObject[key]
         }));
         setBooks(bookList);
         setLoading(false);
