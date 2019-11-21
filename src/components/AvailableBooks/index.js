@@ -9,15 +9,16 @@ import "./AvailableBooks.css";
 const AvailableBooksBase = props => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
-//   const { addBook } = useBooksContext();
+  //   const { addBook } = useBooksContext();
   useEffect(() => {
     setLoading(true);
     props.firebase.books().on("value", snapshot => {
       const bookObject = snapshot.val();
+      console.log(bookObject);
       if (bookObject) {
         const bookList = Object.keys(bookObject).map(key => ({
           ...bookObject[key],
-          uid: key
+          bid: key
         }));
         setBooks(bookList);
         setLoading(false);
@@ -26,7 +27,6 @@ const AvailableBooksBase = props => {
         setLoading(false);
       }
     });
-
     return () => props.firebase.books().off();
   }, [props.firebase]);
 

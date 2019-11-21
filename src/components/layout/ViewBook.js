@@ -1,8 +1,8 @@
 import React from "react"
 
-const ViewBook = () => {
+const ViewBook = (props) => {
     return (
-        <></>
+        <>{console.log(props.location.state)}</>
     )
 }
 

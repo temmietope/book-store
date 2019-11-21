@@ -10,10 +10,10 @@ const BookList = ({ books }) => (
         <section className="booklist">
           {books.map(book => (
             <BookItem
-              key={book.uid}
+              key={book.bid}
               book={book}
               imageUrl="./images/book-rose.jpg"
-              id={book.uid}
+              id={book.bid}
               authUser={authUser}
             />
           ))}
